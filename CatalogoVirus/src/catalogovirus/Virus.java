@@ -9,7 +9,7 @@ public class Virus {
     
     /* Construtor */
     public Virus(){
-        this.temVacina = false;
+        this.temVacina = false; 
     }
     
     /* Setters */
@@ -55,6 +55,53 @@ public class Virus {
     }
     
     /* Regras para classificação do virus */
+    public boolean verificaRegras(){
+        /*
+            Caso não haja vacina e a taxa de mortalidade já 
+            tenha atingido 0.5, a gravidade, automaticamente, 
+            deve ser configurada para 5.
+        */
+        if(this.temVacina == false && this.taxaMortalidade == 0.5){
+            this.setGravidade(5);
+            return true;
+        }
+        /*
+            Caso a taxa de mortalidade seja menor que 0.5, mas 
+            não tenha vacina, a gravidade cai para 4.
+        */
+        else if(this.temVacina == false && this.taxaMortalidade < 0.5){
+            this.setGravidade(4);
+            return true;
+        }
+        /*
+            Se houver vacina e a taxa de mortalidade estiver 
+            acima de 0.5, a gravidade é 3.
+        */
+        else if(this.temVacina == true && this.taxaMortalidade > 0.5){
+            this.setGravidade(3);
+            return true;
+        }
+        /*
+            Taxa de mortalidade entre 0.2 e 0.4 a gravidade é 2.
+        */
+        else if(this.temVacina == true && (this.taxaMortalidade >= 0.2 && this.taxaMortalidade <= 0.4)){
+            this.setGravidade(2);
+            return true;
+        }
+        /*
+            Taxa de mortalidade abaixo de 0.2, a gravidade é 1.
+        */
+        else if(this.temVacina == true && this.taxaMortalidade < 0.2){
+            this.setGravidade(1);
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    
+    
+    
     
     
 }
