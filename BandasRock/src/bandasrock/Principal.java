@@ -25,8 +25,14 @@ public class Principal {
         banda1.setMusico(musicos);
       
         System.out.println("Total de pontos da banda " + banda1.obterTotalPontos());
-        System.out.println("Musico 1: " + musico1.getPontuacao());
-        System.out.println("Musico 2: " + musico2.getPontuacao());          
+        
+        System.out.println("\nMusico 1: \nnome: " + musico1.getNome());
+        System.out.println("Instrumento: " + musico1.getInstrumento());
+        System.out.println("Pontuação: " + musico1.getPontuacao());
+        
+        System.out.println("\nMusico 2: \nnome: " + musico2.getNome());
+        System.out.println("Instrumento: " + musico2.getInstrumento());
+        System.out.println("Pontuação: " + musico2.getPontuacao());
     }
     
 }
