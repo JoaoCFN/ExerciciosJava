@@ -1,26 +1,35 @@
 package bandasrock;
 
+import java.util.ArrayList;
+
 
 public class Banda {
     private String nomeBanda;
     private String tipoRock;
     private String localOrigem;
-    private Musico musico;
+    private ArrayList<Musico> musicos;
     
     // Métodos
     public int obterTotalPontos(){
-        return this.getMusico().getPontuacao();
+        //return this.getMusico().getPontuacao();
+        int totalPontos = 0;
+        for(int i = 0; i < musicos.size(); i++){
+            totalPontos += this.musicos.get(i).getPontuacao();
+        }
+        return totalPontos;
     }
     
-    // Construtor
-    public Banda(Musico musico){
-        this.setMusico(musico);
-        this.musico.aumentaPontuacao();
+
+    // Toda vez que um músico for setado ele ganha +1 de pontuação
+    public void adicionaPontuacao(){
+        for(int i = 0; i < musicos.size(); i++){
+            this.musicos.get(i).aumentaPontuacao();
+        }
     }
     
     // Getters
-    public Musico getMusico(){
-        return this.musico;
+    public ArrayList<Musico> getMusico(){
+        return this.musicos;
     }      
     
     public String getNomeBanda(){
@@ -36,8 +45,9 @@ public class Banda {
     }
     
     // Setters
-    public void setMusico(Musico musico){
-        this.musico = musico;
+    public void setMusico(ArrayList<Musico> musicos){
+        this.musicos = musicos;  
+        this.adicionaPontuacao();
     }   
     
     public void setNomeBanda(String nomeBanda){

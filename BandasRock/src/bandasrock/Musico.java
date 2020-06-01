@@ -4,15 +4,8 @@ public class Musico {
     private String nome;
     private String instrumento;
     private int pontuacao;
-    
-    // Construtor
+ 
     // Toda vez que o músico for chamado na banda, ele ganha um ponto 
-    /*
-    public Musico(){
-        this.setPontuacao(this.getPontuacao() + 1);
-    }
-    */
-    
     public void aumentaPontuacao(){
         this.pontuacao += 1;
     }
