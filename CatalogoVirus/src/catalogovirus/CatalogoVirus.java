@@ -15,11 +15,12 @@ public class CatalogoVirus {
         /* Armazeno o valor em uma var antes para verificar a validade da 
            reposta do usuário.
         */
-        String temVacina = JOptionPane.showInputDialog("Tem vacina? S/N");
-        if(temVacina.equalsIgnoreCase("S")){
+        //String temVacina = JOptionPane.showInputDialog("Tem vacina? S/N");
+        int temVacina = JOptionPane.showConfirmDialog(null, "Existe vacina para este vírus?", "Etc", JOptionPane.YES_NO_OPTION);
+        if(temVacina == JOptionPane.YES_OPTION){
             virus1.setTemVacina(true);
         }
-        else{
+        else if(temVacina == JOptionPane.NO_OPTION){
             virus1.setTemVacina(false);
         }
         

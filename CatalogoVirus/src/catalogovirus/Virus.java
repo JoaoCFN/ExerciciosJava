@@ -79,16 +79,16 @@ public class Virus {
         }
         else{
             /*
-            Caso não haja vacina e a taxa de mortalidade já 
-            tenha atingido 0.5, a gravidade, automaticamente, 
-            deve ser configurada para 5.
+                Caso não haja vacina e a taxa de mortalidade já 
+                tenha atingido 0.5, a gravidade, automaticamente, 
+                deve ser configurada para 5.
             */
             if(this.taxaMortalidade >= 0.5){
                 this.setGravidade(5);
             }
             /*
-            Caso a taxa de mortalidade seja menor que 0.5, mas 
-            não tenha vacina, a gravidade é 4
+                Caso a taxa de mortalidade seja menor que 0.5, mas 
+                não tenha vacina, a gravidade é 4
             */
             else if(this.taxaMortalidade < 0.5){
                 this.setGravidade(4);
