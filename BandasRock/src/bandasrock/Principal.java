@@ -23,8 +23,8 @@ public class Principal {
         banda1.setTipoRock("Metal");
         banda1.setLocalOrigem("Feira de Santana");
         banda1.setMusico(musicos);
-      
-        System.out.println("Total de pontos da banda " + banda1.obterTotalPontos());
+        
+        System.out.println("Total de pontos da banda " + banda1.getPontuacaoBanda());
         
         System.out.println("\nMusico 1: \nnome: " + musico1.getNome());
         System.out.println("Instrumento: " + musico1.getInstrumento());

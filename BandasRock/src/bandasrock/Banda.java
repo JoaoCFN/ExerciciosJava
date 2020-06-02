@@ -7,16 +7,18 @@ public class Banda {
     private String nomeBanda;
     private String tipoRock;
     private String localOrigem;
+    private int pontuacaoBanda;
+
     private ArrayList<Musico> musicos;
     
     // Métodos
-    public int obterTotalPontos(){
+    public void obterTotalPontos(){
         //return this.getMusico().getPontuacao();
         int totalPontos = 0;
         for(int i = 0; i < musicos.size(); i++){
             totalPontos += this.musicos.get(i).getPontuacao();
         }
-        return totalPontos;
+        this.pontuacaoBanda = totalPontos;
     }
     
 
@@ -27,7 +29,7 @@ public class Banda {
         }
     }
     
-    // Getters
+    // Getters 
     public ArrayList<Musico> getMusico(){
         return this.musicos;
     }      
@@ -44,10 +46,15 @@ public class Banda {
         return this.localOrigem;
     }
     
+    public int getPontuacaoBanda() {
+        return pontuacaoBanda;
+    }
+    
     // Setters
     public void setMusico(ArrayList<Musico> musicos){
         this.musicos = musicos;  
         this.adicionaPontuacao();
+        this.obterTotalPontos();
     }   
     
     public void setNomeBanda(String nomeBanda){
@@ -62,4 +69,8 @@ public class Banda {
         this.localOrigem = localOrigem;
     }
     
+    public void setPontuacaoBanda(int pontuacaoBanda) {
+        this.pontuacaoBanda = pontuacaoBanda;
+    }
+ 
 }
