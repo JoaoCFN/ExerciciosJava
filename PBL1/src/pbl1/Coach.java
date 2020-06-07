@@ -25,6 +25,7 @@ public class Coach {
         this.clientes = new ArrayList<Cliente>();
     }
     
+    // RETIRAR QUANDO FOR ENVIAR
     public int tamanhoArray(){
         return this.clientes.size();
     }
@@ -81,7 +82,7 @@ public class Coach {
                 String formaAtendimentoCoach = this.retornaFormaAtendimentoCoach();
                 if(cliente.getFormaAtendimento().equalsIgnoreCase(formaAtendimentoCoach)){
                     this.setCliente(cliente);
-                    return "Deu certo!";
+                    return "Coach encontrado, marque sua consulta!";
                 }
                 
                 return "Incompatibilidade de coach, pois a forma de atendimento é diferente";
