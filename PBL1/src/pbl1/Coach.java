@@ -1,4 +1,7 @@
 package pbl1;
+
+import java.util.ArrayList;
+
 /*
     nome, 
     os coachees que acompanha, 
@@ -15,6 +18,12 @@ public class Coach {
     private String areaAtuacao;
     private int quantidadeMaximaClientes;
     private boolean atendimentoVirtual;
+    private ArrayList<Cliente> clientes;
+    
+    // Construtor
+    public Coach(){
+        this.clientes = new ArrayList<Cliente>();
+    }
     
     // Getters
     public String getNome(){
@@ -31,6 +40,10 @@ public class Coach {
     
     public boolean getAtendimentoVirtual(){
         return this.atendimentoVirtual;
+    }
+
+    public ArrayList<Cliente> getClientes() {
+        return this.clientes;
     }
     
     // Setters
@@ -49,6 +62,26 @@ public class Coach {
     public void setAreaAtuacao(boolean atendimentoVirtual){
         this.atendimentoVirtual = atendimentoVirtual;
     }
+    
+    private void setCliente(Cliente cliente) {
+        this.clientes.add(cliente);
+    }
+    
+    public String atribuiCliente(Cliente cliente){
+        if(this.clientes.size() < this.quantidadeMaximaClientes){
+            if(cliente.getAreaNecessidade().equalsIgnoreCase(this.areaAtuacao)){
+                this.setCliente(cliente);
+                return "Deu certo!";
+            }
+            
+            return "Incompatibilidade de coach, pois não é da mesma área de interesse.";
+        }
+        
+        return "Incompatibilidade de coach, pois o número de clientes foi atingido.";
+        
+    }
+    
+    
      
     
 }
