@@ -25,6 +25,10 @@ public class Coach {
         this.clientes = new ArrayList<Cliente>();
     }
     
+    public int tamanhoArray(){
+        return this.clientes.size();
+    }
+    
     // Getters
     public String getNome(){
         return this.nome;
@@ -59,19 +63,28 @@ public class Coach {
         this.quantidadeMaximaClientes = quantidadeMaximaClientes;
     }
     
-    public void setAreaAtuacao(boolean atendimentoVirtual){
+    public void setAtendimentoVirtual(boolean atendimentoVirtual){
         this.atendimentoVirtual = atendimentoVirtual;
     }
     
+    // Método privado pois a partir do método atribui cliente podemos setar ele
     private void setCliente(Cliente cliente) {
         this.clientes.add(cliente);
     }
     
+    // Outros métodos
     public String atribuiCliente(Cliente cliente){
         if(this.clientes.size() < this.quantidadeMaximaClientes){
+            
             if(cliente.getAreaNecessidade().equalsIgnoreCase(this.areaAtuacao)){
-                this.setCliente(cliente);
-                return "Deu certo!";
+                
+                String formaAtendimentoCoach = this.retornaFormaAtendimentoCoach();
+                if(cliente.getFormaAtendimento().equalsIgnoreCase(formaAtendimentoCoach)){
+                    this.setCliente(cliente);
+                    return "Deu certo!";
+                }
+                
+                return "Incompatibilidade de coach, pois a forma de atendimento é diferente";
             }
             
             return "Incompatibilidade de coach, pois não é da mesma área de interesse.";
@@ -79,6 +92,13 @@ public class Coach {
         
         return "Incompatibilidade de coach, pois o número de clientes foi atingido.";
         
+    }
+    
+    private String retornaFormaAtendimentoCoach(){
+        if(this.atendimentoVirtual){
+            return "Virtual";
+        }
+        return "Presencial";
     }
     
     
