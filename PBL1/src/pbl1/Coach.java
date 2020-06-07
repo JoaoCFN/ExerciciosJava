@@ -24,12 +24,7 @@ public class Coach {
     public Coach(){
         this.clientes = new ArrayList<Cliente>();
     }
-    
-    // RETIRAR QUANDO FOR ENVIAR
-    public int tamanhoArray(){
-        return this.clientes.size();
-    }
-    
+      
     // Getters
     public String getNome(){
         return this.nome;

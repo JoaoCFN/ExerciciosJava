@@ -40,9 +40,7 @@ public class Principal {
         System.out.println("Cliente 2");
         System.out.println("Nome: " + cliente2.getNome());
         System.out.println("Status: " + coach1.atribuiCliente(cliente2));
-        
-        System.out.println(coach1.tamanhoArray());
-        
+         
     }
     
 }
