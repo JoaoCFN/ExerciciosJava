@@ -1,4 +1,4 @@
-#  EXERCÍCIOS JAVA
+#  Exercícios Java
  
 ## :closed_book: Sobre 
  ### Este é um repositório de estudos
